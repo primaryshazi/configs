@@ -1,28 +1,24 @@
 # 安装redis
 
-1. mkdir /usr/local/shazi/redis
+1. mkdir -p /usr/local/shazi/redis /usr/local/shazi/redis/conf /usr/local/shazi/redis/data
 
-2. mkdir /usr/local/shazi/redis/conf
+2. 传入redis-6.2.4至/usr/local/shazi/redis中
 
-3. mkdir /usr/local/shazi/redis/data
+3. tar -zxvf redis-6.2.4.tar.gz
 
-4. 传入redis-6.2.4至/usr/local/shazi/redis中
+4. cd redis-6.2.4
 
-5. tar -zxvf redis-6.2.4.tar.gz
+5. make install PREFIX=/usr/local/shazi/redis
 
-6. cd redis-6.2.4
+6. cp ./redis.conf /usr/local/shazi/redis/conf/
 
-7. make install PREFIX=/usr/local/shazi/redis
+7. sed -i 's/daemonize no/daemonize yes/g' /usr/local/shazi/redis/conf/redis.conf
 
-8. cp ./redis.conf /usr/local/shazi/redis/conf/
+8. sed -i 's/dir .\//dir \/usr\/local\/shazi\/redis\/data/g' /usr/local/shazi/redis/conf/redis.conf
 
-9. sed -i 's/daemonize no/daemonize yes/g' /usr/local/shazi/redis/conf/redis.conf
+9. echo "export PATH=/usr/local/shazi/redis/bin:"'$PATH' >> /etc/profile.d/shazi.sh
 
-10. sed -i 's/dir .\//dir \/usr\/local\/shazi\/redis\/data/g' /usr/local/shazi/redis/conf/redis.conf
-
-11. echo "export PATH=/usr/local/shazi/redis/bin:"'$PATH' >> /etc/profile.d/shazi.sh
-
-12. 设置开机启动
+10. 设置开机启动
 
 ``` shell
 echo > /etc/systemd/system/redis.service << EOF
@@ -40,8 +36,8 @@ WantedBy=multi-user.target
 EOF
 ```
 
-13. systemctl daemon-reload
+11. systemctl daemon-reload
 
-14. systemctl enable redis.service
+12. systemctl enable redis.service
 
-15. systemctl start redis.service
+13. systemctl start redis.service
