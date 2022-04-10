@@ -12,7 +12,7 @@ GO_OPTION="go"
 PYTHON_OPTION="python"
 
 GIT_PATH="./packet/git-2.31.1.tar.gz"
-CMAKE_PATH="./packet/cmake-3.20.0-linux-x86_64.tar.gz"
+CMAKE_PATH="./packet/cmake-3.23.0-linux-x86_64.tar.gz"
 GDB_PATH="./packet/gdb-10.2.tar.gz"
 GCC_PATH="./packet/gcc-10.3.0.tar.gz"
 GO_PATH="./packet/go1.16.5.linux-amd64.tar.gz"
@@ -179,7 +179,7 @@ function ConfigEnv() {
 
     if [ -e ${ENV_FILE} ]; then
         result=$(cat ${ENV_FILE} | grep $1)
-        if [ -z ${result} ]; then
+        if [ -z "${result}" ]; then
             isConfig=1
         fi
     else
