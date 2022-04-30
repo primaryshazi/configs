@@ -2,7 +2,7 @@
 
 1. https://golang.google.cn/dl/ 安装go
 
-2. 环境变量 GOPATH=C:/user/shazi/GOPAH
+2. 环境变量 GOPATH=C:\Develop\GoPath
 
 3. 环境变量 GO111MODULE=off
 
