@@ -15,7 +15,7 @@ GIT_PATH="./packet/git-2.31.1.tar.gz"
 CMAKE_PATH="./packet/cmake-3.23.0-linux-x86_64.tar.gz"
 GDB_PATH="./packet/gdb-10.2.tar.gz"
 GCC_PATH="./packet/gcc-10.3.0.tar.gz"
-GO_PATH="./packet/go1.16.5.linux-amd64.tar.gz"
+GO_PATH="./packet/go1.18.1.linux-amd64.tar.gz"
 PYTHON_PATH="./packet/Python-3.8.9.tar.gz"
 
 
