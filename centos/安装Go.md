@@ -2,7 +2,7 @@
 
 1. https://golang.google.cn/dl/ 安装go
 
-2. go env -w GOPATH=/usr/local/shazi/GOPATH
+2. go env -w GOPATH=/usr/local/shazi/gopath
 
 3. go env -w GO111MODULE=off
 
