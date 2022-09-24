@@ -4,7 +4,7 @@
 
 2. go env -w GOPATH=/usr/local/shazi/gopath
 
-3. go env -w GO111MODULE=off
+3. go env -w GO111MODULE=on
 
 4. go env -w GOPROXY=https://goproxy.cn,direct
 
